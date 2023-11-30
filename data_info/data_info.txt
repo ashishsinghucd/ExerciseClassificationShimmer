@@ -1,0 +1,43 @@
+### Sensor Locations
+    - 548D – L Arm/Shank
+    - B8C7 – R Arm/Shank
+    - 9276 – Lspx
+    - B8E3 – R Wrist
+    - 57D0 – L Wrist
+
+The sampling rate for the data is usually 51.2 Hz in this data set but it is different for some exercises e.g. jump data. You will always be able to check this by checking a timestamp column in the files. They are in ms so you can look at 2 sequential samples and get sampling rate by looking at 2 sequential samples and using the formula:
+1000/(sample(2)-sample(1))
+
+- Reading the data is quite easy. We just have to rename the file to .csv extension.
+- Description 5 sensors (lower back, 2 wrists, 2 elbows)
+- Accelerometer (movement acceleration)
+        Calibrated and Uncalibrated
+            We have to use the calibrated one
+        Low noise and wide range
+            These two are approximately the same. We only have to use the LN.
+        X , Y and Z coordinates
+- Magnetometer (orientation/compass?)
+        Calibrated and Uncalibrated
+        X , Y and Z coordinates
+- Gyroscope (angular velocity, degrees per second)
+        Calibrated and Uncalibrated
+        X , Y and Z coordinates
+- Magnetometer can be used to do the segmentation
+- Each sensor 33 columns
+    12 from accelerometer
+    6 from magnetometer
+    6 from gyroscope
+    Other columns
+        Batt_percentage - 1
+        Event Marker -1
+        Packer Reception Rate Trial
+        Packet Reception Rate Current
+        SyncTimestamp
+        System Timestamp
+            Cal and uncal
+        Timestamp
+            Cal and uncal
+- We don’t have to use the uncal data, only cal data
+- Total columns: 5 sensors, 5 * 33 columns + 2 extra columns (Annotation Level and Annotation Pulse)
+
+

@@ -1,0 +1,7 @@
+INPUT_DATA_PATH = TrainTestDataSktime
+BASE_PATH=Results/Datasets/Shimmer
+EXERCISE = MP
+SEED_VALUES=103007,1899797,191099
+OUTPUT_PATH =  Results/Output/Shimmer
+DATA_TYPE = default_type
+GENDER_INFO=/home/ashish/PycharmProjects/ExerciseClassificationShimmer/data_info/gender_info.csv
